@@ -2,19 +2,26 @@
 
 <form>
     <label for="fname">Frist name:</label><br>
-    <input type="text" id="fname" name="fname" required><br>
+    <input type="text" id="fname" name="fname" ng-model="user.fname" required><br>
 
     <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" required><br>
+    <input type="text" id="lname" name="lname" ng-model="user.lname" required><br>
 
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
+    <input type="email" id="email" name="email" ng-model="user.email" required><br>
 
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br>
+    <input type="password" id="password" name="password" ng-model="user.password" required><br>
 
     <label for="telno">Phone no:</label><br>
-    <input type="text" id="telno" name="telno" required><br>
+    <input type="text" id="telno" name="telno" ng-model="user.telno" required><br>
+
+    <label for="gender">Gender:</label><br>
+    <input type="radio" ng-model="user.gender" value="male" />male
+    <input type="radio" ng-model="user.gender" value="female" />female<br/>
 
     <input type="submit">
 </form>
+
+
+<p> {{user}} </p>

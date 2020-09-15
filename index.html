@@ -55,8 +55,23 @@
     });
 
     //Sigin Up page controller
-    app.controller("signupCtrl", function ($scope) {
+    app.controller("signupCtrl", function ($scope, $http) {
         $scope.pageTitle = "Sign In";
+
+        console.log( $scope.user);
+
+        $http({
+            method : "post",
+            data :  $scope.user,
+            url : "welcome.htm",
+            
+        }).then(function mySuccess(response) {
+            $scope.myWelcome = response.data;
+            console.log( $scope.user);
+        }, function myError(response) {
+            console.log( $scope.user);
+            $scope.myWelcome = response.statusText;
+        });
     });
 
 

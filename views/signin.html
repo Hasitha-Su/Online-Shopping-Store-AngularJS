@@ -2,10 +2,12 @@
 
 <form>
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
+    <input type="email" id="email" name="email" ng-model="user.email" required><br>
 
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br>
+    <input type="password" id="password" name="password" ng-model="user.password" required><br>
+
+    <p> {{user}}</p>
 
     <input type="submit">
 </form>
