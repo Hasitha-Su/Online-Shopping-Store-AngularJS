@@ -5,6 +5,11 @@
     <script src="libs/angularjs/angular-route.js"></script>
 </head>
 
+<style>
+
+
+</style>
+
 
 <body ng-app="myApp">
   <ul>
@@ -17,37 +22,42 @@
 
 <script>
 
-  var app = angular.module("myApp", ["ngRoute"]);
+    var app = angular.module("myApp", ["ngRoute"]);
 
-  app.config(function($routeProvider) {
+    app.config(function($routeProvider) {
 
-  $routeProvider
-  .when("/", {
-    templateUrl : "views/home.html"
+    $routeProvider
+    .when("/", {
+        templateUrl : "views/home.html",
+        controller : "homeCtrl"
 
-  })
+    })
 
-  .when("/signin", {
-    templateUrl : "views/signin.html",
-    controller : "signinCtrl"
-  })
+    .when("/signin", {
+        templateUrl : "views/signin.html",
+        controller : "signinCtrl"
+    })
 
-  .when("/signup", {
-    templateUrl : "views/signup.html",
-    controller : "signupCtrl"
-  });
-});
+    .when("/signup", {
+        templateUrl : "views/signup.html",
+        controller : "signupCtrl"
+    });
+    });
 
-//Sigin In page controller
-app.controller("signinCtrl", function ($scope) {
-    $scope.pageTitle = "";
-});
+    //Home page controller
+    app.controller("homeCtrl", function ($scope) {
+        $scope.pageTitle = "Home";
+    });
 
-//Sigin Up page controller
-app.controller("signupCtrl", function ($scope) {
-    $scope.pageTitle = "";
-});
+    //Sigin In page controller
+    app.controller("signinCtrl", function ($scope) {
+        $scope.pageTitle = "Sign Up";
+    });
 
+    //Sigin Up page controller
+    app.controller("signupCtrl", function ($scope) {
+        $scope.pageTitle = "Sign In";
+    });
 
 
 </script>
