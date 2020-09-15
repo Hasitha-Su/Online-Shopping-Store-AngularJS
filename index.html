@@ -24,16 +24,28 @@
   $routeProvider
   .when("/", {
     templateUrl : "views/home.html"
+
   })
 
   .when("/signin", {
-    templateUrl : "views/signin.html"
+    templateUrl : "views/signin.html",
+    controller : "signinCtrl"
   })
 
   .when("/signup", {
-    templateUrl : "views/signup.html"
+    templateUrl : "views/signup.html",
+    controller : "signupCtrl"
   });
+});
 
+//Sigin In page controller
+app.controller("signinCtrl", function ($scope) {
+    $scope.pageTitle = "";
+});
+
+//Sigin Up page controller
+app.controller("signupCtrl", function ($scope) {
+    $scope.pageTitle = "";
 });
 
 
