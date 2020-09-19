@@ -1,11 +1,15 @@
 <h1>{{pageTitle}}</h1>
 
-<form>
+<form name="signinForm">
+
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" ng-model="user.email" required><br>
+    <input type="email" id="email" name="email" ng-model="user.email" required>
+    <span ng-show="signupForm.email.$error.required">Email is required.</span>
+    <span ng-show="signupForm.email.$error.email">Invalid email address.</span><br>
 
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" ng-model="user.password" required><br>
+    <input type="password" id="password" name="password" ng-model="user.password" required>
+    <span ng-show="signinForm.password.$touched && signinForm.password.$invalid">Password  is required</span><br>
 
     <p> {{user}}</p>
 

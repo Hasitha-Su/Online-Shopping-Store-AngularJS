@@ -1,24 +1,36 @@
 <h1>{{pageTitle}}</h1>
 
-<form>
+<form name="signupForm">
+
     <label for="fname">Frist name:</label><br>
-    <input type="text" id="fname" name="fname" ng-model="user.fname" required><br>
+    <input type="text" id="fname" name="fname" ng-model="user.fname" required>
+    <span ng-show="signupForm.fname.$touched && signupForm.fname.$invalid">First name is required</span><br>
 
     <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" ng-model="user.lname" required><br>
+    <input type="text" id="lname" name="lname" ng-model="user.lname" required>
+    <span ng-show="signupForm.lname.$touched && signupForm.lname.$invalid">Last name is required</span><br>
 
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" ng-model="user.email" required><br>
+    <input type="email" id="email" name="email" ng-model="user.email" required>
+    <span ng-show="signupForm.email.$touched && signupForm.email.$error.required">Email is required.</span>
+    <span ng-show="signupForm.email.$error.email">Invalid email address.</span><br>
 
     <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" ng-model="user.password" required><br>
+    <input type="password" id="password" name="password" ng-model="user.password" required>
+    <span ng-show="signupForm.password.$touched && signupForm.password.$invalid">Password  is required</span><br>
+
+    <!-- <label for="password_conf">Confirm Password:</label><br>
+    <input type="password" id="password_conf" name="password_conf" ng-model="user.password_conf" required>
+    <span ng-show="signupForm.fname.$touched && signupForm.fname.$invalid">First name is required</span><br> -->
 
     <label for="telno">Phone no:</label><br>
-    <input type="text" id="telno" name="telno" ng-model="user.telno" required><br>
+    <input type="text" id="telno" name="telno" ng-model="user.telno" required>
+    <span ng-show="signupForm.telno.$touched && signupForm.telno.$invalid">Phone number  is required</span><br>
 
     <label for="gender">Gender:</label><br>
     <input type="radio" ng-model="user.gender" value="male" />male
     <input type="radio" ng-model="user.gender" value="female" />female<br/>
+    <span ng-show="signupForm.gender.$invalid">Gender is required</span><br>
 
     <input type="submit">
 </form>
